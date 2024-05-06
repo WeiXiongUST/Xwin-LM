@@ -40,6 +40,11 @@ def remove_prefix_and_suffix(string: str) -> str:
     """
     Remove unnecessary prefixes and suffixes from the input strings
     """
+    string = string.strip(' \n').rstrip('.').strip(' \n').rstrip('.')
+    if string.startswith("\\(") and string.endswith("\\)"):
+        string = string[len("\\("):-len("\\)")]
+    if string.startswith("\\[") and string.endswith("\\]"):
+        string = string[len("\\["):-len("\\]")]
     return string.strip(' \n').rstrip('.').strip(' \n').rstrip('.')
 
 

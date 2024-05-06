@@ -19,6 +19,8 @@ Powerful, Stable, and Reproducible LLM Alignment
 Xwin-LM aims to develop and open-source alignment technologies for large language models, including supervised fine-tuning (SFT), reward models (RM), reject sampling, reinforcement learning from human feedback (RLHF), etc. Our first release, built-upon on the Llama2 base models, ranked **TOP-1** on [AlpacaEval](https://tatsu-lab.github.io/alpaca_eval/). Notably, it's **the first to surpass GPT-4** on this benchmark. The project will be continuously updated.
 
 ## News
+
+- :boom: [May, 2024] The [Xwin-Math-70B-V1.1](https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.1) and [Xwin-Math-7B-V1.1](https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.1) model achieve **51.9 and 44.7 pass@1 on the MATH benchmark** and **90.6 and 84.4 pass@1 on the GSM8K benchmark**. These are new SoTA models based on LLaMA-2!
 - :boom: [Jan, 2024] We update [XwinLM-V0.3](https://tatsu-lab.github.io/alpaca_eval/) on [AlpacaEval](https://tatsu-lab.github.io/alpaca_eval/), ranking as **top-1** among open-source models.
 - :boom: [Nov, 2023] The [Xwin-Math-70B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.0) model achieves **31.8 pass@1 on the MATH benchmark** and **87.0 pass@1 on the GSM8K benchmark**. This performance places it first amongst all open-source models!
 - :boom: [Nov, 2023] The [Xwin-Math-7B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.0) and [Xwin-Math-13B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-13B-V1.0) models achieve **66.6 and 76.2 pass@1 on the GSM8K benchmark**, ranking as top-1 among all LLaMA-2 based 7B and 13B open-source models, respectively!

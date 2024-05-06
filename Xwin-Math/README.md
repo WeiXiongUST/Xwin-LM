@@ -1,13 +1,11 @@
 # Xwin-Math
 
-<div align="center">
-  <img src="assets/results.png" style="width: 80%">
-</div>
-
-This repo introduces Xwin-Math, a series of powerful SFT LLMs for math problem based on LLaMA-2. Moreover, it also includes an evaluation toolkit that better converts LaTeX formulas into SymPy objects, enabling more accurate assessment of the mathematical abilities.
+[Paper Link](https://arxiv.org/pdf/2403.04706) This repo introduces Xwin-Math, a series of powerful SFT LLMs for math problem based on LLaMA-2. Moreover, it also includes an evaluation toolkit that better converts LaTeX formulas into SymPy objects, enabling more accurate assessment of the mathematical abilities.
 
 
 ## 🔥 News
+- :boom: [May, 2024] The [Xwin-Math-70B-V1.1](https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.1) model achieves **51.9 pass@1 on the MATH benchmark** and **90.6 pass@1 on the GSM8K benchmark**. This is a new SoTA model based on LLaMA-2-70B!
+- :boom: [May, 2024] The [Xwin-Math-7B-V1.1](https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.1) model achieves **44.7 pass@1 on the MATH benchmark** and **84.4 pass@1 on the GSM8K benchmark**. This is a new SoTA model based on LLaMA-2-7B!
 - :boom: [Nov, 2023] The [Xwin-Math-70B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.0) model achieves **31.8 pass@1 on the MATH benchmark** and **87.0 pass@1 on the GSM8K benchmark**. This performance places it first amongst all open-source models!
 - :boom: [Nov, 2023] The [Xwin-Math-7B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.0) and [Xwin-Math-13B-V1.0](https://huggingface.co/Xwin-LM/Xwin-Math-13B-V1.0) models achieve **66.6 and 76.2 pass@1 on the GSM8K benchmark**, ranking as top-1 among all LLaMA-2 based 7B and 13B open-source models, respectively!
 
@@ -16,8 +14,10 @@ This repo introduces Xwin-Math, a series of powerful SFT LLMs for math problem b
 |  Model  |  GSM8K  |  MATH  |  Checkpoint  |  License  |
 |:-:|:-:|:-:|:-:|:-:|
 |Xwin-Math-7B-V1.0 |  66.6  |  17.4  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.0" target="_blank">HF Link</a> | <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
+|Xwin-Math-7B-V1.1 |  84.4  |  44.7  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-7B-V1.1" target="_blank">HF Link</a> | <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
 |Xwin-Math-13B-V1.0|  76.2  |  21.7  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-13B-V1.0" target="_blank">HF Link</a> |  <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
 |Xwin-Math-70B-V1.0|  87.0  |  31.8  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.0" target="_blank">HF Link</a> |  <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
+|Xwin-Math-70B-V1.1|  90.6  |  51.9  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.1" target="_blank">HF Link</a> |  <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
 
 ## 🚀 Benchmarks
 ### Xwin-Math performance on [MATH](https://github.com/hendrycks/math) and [GSM8K](https://github.com/openai/grade-school-math).
@@ -35,6 +35,7 @@ Xwin-Math-70B-V1.0 has achieved **31.8% on MATH** and **87.0% on GSM8K**. These 
 |  MetaMath-70B         |  26.5  |  82.0  |
 |  LEMAv1-70B           |  25.9  |  83.9  |
 |**Xwin-Math-70B-V1.0** |**31.8**|**87.0**|
+|**Xwin-Math-70B-V1.1** |**51.9**|**90.6**|
 | | 
 |  WizardMath-13B       |  15.0  |  63.7  |
 |  MAmmoTH-13B          |  12.3  |  56.2  |
@@ -47,6 +48,7 @@ Xwin-Math-70B-V1.0 has achieved **31.8% on MATH** and **87.0% on GSM8K**. These 
 |  MetaMath-7B 			    |  20.1  |  66.6  |
 |  LEMAv1-7B            |  10.0  |  54.7  |
 |**Xwin-Math-7B-V1.0**  |  17.4  |  66.6  |
+|**Xwin-Math-7B-V1.1**  |  44.7  |  84.4  |
 
 We obtain these results using our flexible evaluation strategy. Due to differences in environment and hardware, the numbers may be different from the reported results, but we ensure that the evaluation is as accurate and fair as possible.
 
