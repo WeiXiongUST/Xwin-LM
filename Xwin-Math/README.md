@@ -19,6 +19,9 @@
 |Xwin-Math-70B-V1.0|  87.0  |  31.8  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.0" target="_blank">HF Link</a> |  <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
 |Xwin-Math-70B-V1.1|  90.6  |  51.9  | 🤗 <a href="https://huggingface.co/Xwin-LM/Xwin-Math-70B-V1.1" target="_blank">HF Link</a> |  <a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/" target="_blank">Llama 2 License|
 
+* Xwin-Math-7B-V1.1 uses 1.92M GSM8K and 960K MATH synthetic data.
+* Xwin-Math-70B-V1.1 uses 960K GSM8K and 480K MATH synthetic data.
+
 ## 🚀 Benchmarks
 ### Xwin-Math performance on [MATH](https://github.com/hendrycks/math) and [GSM8K](https://github.com/openai/grade-school-math).
 
@@ -115,7 +118,7 @@ To generate the model's responses, you can use the `generate.py` script. Please 
 
 For the generation process, we use the Vicuna-v1.1 system prompt with chain-of-thought and format instruction. We also employ a greedy decoding strategy and set the maximum sequence length to 2048.
 ```
-"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {instruction} Give your solution in detail. In the end, write your final answer in the format of 'The answer is: <ANSWER>.'. ASSISTANT: "
+"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {instruction} Give your solution in detail. In the end, write your final answer in the format of 'The answer is: <ANSWER>.'. ASSISTANT:"
 ```
 
 Here is an simple example to generate using [vLLM](https://docs.vllm.ai/en/latest/).
