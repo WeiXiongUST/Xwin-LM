@@ -12,7 +12,7 @@ from typing import Optional, Tuple
 import fire
 from vllm import LLM, SamplingParams
 
-def generate(model_path: str, dataset_path: str, prompt_path: str = "prompt/xwin-math.json", output_path: Optional[str] = None, tensor_parallel_size: int = 1, test_part: Optional[Tuple[int, int]] = None)-> None:
+def generate(model_path: str, dataset_path: str, prompt_path: str = "prompt/deepseed.json", output_path: Optional[str] = None, tensor_parallel_size: int = 1, test_part: Optional[Tuple[int, int]] = None)-> None:
 
     """
     Generate model's response using vLLM. 
@@ -42,7 +42,8 @@ def generate(model_path: str, dataset_path: str, prompt_path: str = "prompt/xwin
         items["completion"] = ["" for _ in range(len(prompt_dict))]
 
     llm = LLM(model=model_path,tensor_parallel_size=tensor_parallel_size)
-    stop_tokens = ["</s>", "Question:", "Question", "USER:", "USER", "ASSISTANT:", "ASSISTANT", "Instruction:", "Instruction", "Response:", "Response"]
+    #stop_tokens = ["</s>", "Question:", "Question", "USER:", "USER", "ASSISTANT:", "ASSISTANT", "Instruction:", "Instruction", "Response:", "Response"]
+    stop_tokens = ['User'] #["</s>", "Question:", "Question", "USER:", "USER", "ASSISTANT:", "ASSISTANT", "Instruction:", "Instruction", "Response:", "Response"]
     sampling_params = SamplingParams(temperature=0, top_p=1, max_tokens=2048, stop=stop_tokens)
 
     for index, (_, prompt) in enumerate(prompt_dict.items()):
@@ -54,7 +55,9 @@ def generate(model_path: str, dataset_path: str, prompt_path: str = "prompt/xwin
                 curr_data_list = test_dataset_list[batch_size * index_global:batch_size * (index_global+1)]
 
             # Inference
-            prompt = [prompt.format(instruction = item["question"], ANSWER = "{ANSWER}", NUMBER = "{NUMBER}") for item in curr_data_list]
+            #prompt = [prompt.format(instruction = item["question"], ANSWER = "{ANSWER}", NUMBER = "{NUMBER}") for item in curr_data_list]
+            prompt = [prompt.format(instruction = item["question"]) + ' \\boxed{}.' for item in curr_data_list]
+            
             print(prompt[0])
             completions = llm.generate(prompt, sampling_params)
 
